@@ -6,6 +6,11 @@ using Android.Util;
 using Firebase.Messaging;
 using System.Collections.Generic;
 
+
+/// <summary>
+/// All sample code taken from walk-through at
+/// https://docs.microsoft.com/en-au/xamarin/android/data-cloud/google-messaging/remote-notifications-with-fcm?tabs=windows#fcm-notifications-overview
+/// </summary>
 namespace XamarinFCM
 {
     [Service]

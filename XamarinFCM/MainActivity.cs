@@ -11,6 +11,10 @@ using Firebase.Messaging;
 using Firebase.Iid;
 using Android.Util;
 
+/// <summary>
+/// All sample code taken from walk-through at
+/// https://docs.microsoft.com/en-au/xamarin/android/data-cloud/google-messaging/remote-notifications-with-fcm?tabs=windows#fcm-notifications-overview
+/// </summary>
 namespace XamarinFCM
 {
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher = true)]
