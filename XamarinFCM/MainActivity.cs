@@ -100,7 +100,12 @@ namespace XamarinFCM
             if (resultCode != ConnectionResult.Success)
             {
                 if (GoogleApiAvailability.Instance.IsUserResolvableError(resultCode))
+                {
                     msgText.Text = GoogleApiAvailability.Instance.GetErrorString(resultCode);
+                    var errorDialog = GoogleApiAvailability.Instance.GetErrorDialog(this, resultCode, 9000);
+
+                    errorDialog.Show();
+                }
                 else
                 {
                     msgText.Text = "This device is not supported";
