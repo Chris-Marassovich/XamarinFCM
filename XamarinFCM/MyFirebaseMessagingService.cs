@@ -54,7 +54,7 @@ namespace XamarinFCM
                                                           PendingIntentFlags.OneShot);
 
             var notificationBuilder = new NotificationCompat.Builder(this, MainActivity.CHANNEL_ID)
-                                      .SetSmallIcon(Resource.Drawable.common_google_signin_btn_icon_dark)
+                                      .SetSmallIcon(Resource.Drawable.ic_launcher)
                                       .SetContentTitle(messageTitle)
                                       .SetContentText(messageBody)
                                       .SetAutoCancel(true)
