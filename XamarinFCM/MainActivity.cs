@@ -10,6 +10,7 @@ using Android.Gms.Common;
 using Firebase.Messaging;
 using Firebase.Iid;
 using Android.Util;
+using Android.Gms.Extensions;
 
 /// <summary>
 /// All sample code taken from walk-through at
@@ -54,7 +55,14 @@ namespace XamarinFCM
 
             var logTokenButton = FindViewById<Button>(Resource.Id.logTokenButton);
             logTokenButton.Click += delegate {
-                Log.Debug(TAG, "InstanceID token: " + FirebaseInstanceId.Instance.Token);
+                System.Threading.Tasks.Task.Run(() =>
+                {
+                    var instanceId = FirebaseInstanceId.Instance.GetInstanceId().AsAsync<IInstanceIdResult>();
+                    Log.Debug(TAG, "GetInstanceID token: " + instanceId.Result.Token);
+
+                    var token = FirebaseInstanceId.Instance.GetToken("516342311658", "GCM");
+                    Log.Debug(TAG, "InstanceID token: " + token);// FirebaseInstanceId.Instance.Token) ;
+                });
             };
 
             var subscribeButton = FindViewById<Button>(Resource.Id.subscribeButton);
